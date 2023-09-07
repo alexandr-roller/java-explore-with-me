@@ -6,17 +6,15 @@ import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilde
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.time.format.DateTimeFormatter;
-
-import static ru.practicum.ewm.stats.common.CommonFormats.DATE_TIME_FORMAT;
+import static ru.practicum.ewm.stats.common.CommonFormats.DATE_TIME_FORMATTER;
 
 @Configuration
 public class JsonDateTimeConfig {
     @Bean
     public Jackson2ObjectMapperBuilderCustomizer jsonDateTimeCustomizer() {
         return builder -> {
-            builder.serializers(new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(DATE_TIME_FORMAT)));
-            builder.deserializers(new LocalDateTimeDeserializer(DateTimeFormatter.ofPattern(DATE_TIME_FORMAT)));
+            builder.serializers(new LocalDateTimeSerializer(DATE_TIME_FORMATTER));
+            builder.deserializers(new LocalDateTimeDeserializer(DATE_TIME_FORMATTER));
         };
     }
 }

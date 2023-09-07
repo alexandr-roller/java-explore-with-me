@@ -1,8 +1,9 @@
 package ru.practicum.ewm.stats.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
 import lombok.Data;
-import lombok.With;
+import ru.practicum.ewm.stats.common.CommonFormats;
 
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
@@ -17,6 +18,6 @@ public class EndpointHitDto {
     private String uri;
     @NotBlank
     private String ip;
-    @With
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = CommonFormats.DATE_TIME_FORMAT)
     private LocalDateTime timestamp;
 }
