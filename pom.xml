@@ -14,6 +14,8 @@
 	<modules>
 		<module>stats</module>
         <module>main-service</module>
+		<module>common</module>
+		<module>stats-client</module>
     </modules>
 
 	<groupId>ru.practicum</groupId>
@@ -24,6 +26,8 @@
 	<properties>
 		<java.version>11</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<lombok.version>1.18.26</lombok.version>
+		<mapstruct.version>1.5.5.Final</mapstruct.version>
 	</properties>
 
 	<build>
