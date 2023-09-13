@@ -47,14 +47,14 @@ public class EventServiceImpl implements EventService {
     public Event updateByUser(Event event, Long userId) {
         Event eventForUpdate = findById(event.getId());
 
-        if (eventForUpdate.getState().equals(Event.State.PUBLISHED)) {
+        if (eventForUpdate.getState() == Event.State.PUBLISHED) {
             throw new DataIntegrityViolationException("Event is already published");
         }
 
         Event.State newState = event.getState();
         Event.State oldState = eventForUpdate.getState();
 
-        if (newState != null && newState.equals(Event.State.CANCELED) && oldState.equals(Event.State.PUBLISHED)) {
+        if (newState != null && newState == Event.State.CANCELED && oldState == Event.State.PUBLISHED) {
             throw new DataIntegrityViolationException("Published event cannot be cancelled");
         }
 
@@ -70,15 +70,15 @@ public class EventServiceImpl implements EventService {
         Event.State newState = event.getState();
         Event.State oldState = eventForUpdate.getState();
 
-        if (newState != null && newState.equals(Event.State.PUBLISHED) && oldState.equals(Event.State.PUBLISHED)) {
+        if (newState != null && newState == Event.State.PUBLISHED && oldState == Event.State.PUBLISHED) {
             throw new DataIntegrityViolationException("Event is already published");
         }
 
-        if (newState != null && newState.equals(Event.State.PUBLISHED) && oldState.equals(Event.State.CANCELED)) {
+        if (newState != null && newState == Event.State.PUBLISHED && oldState == Event.State.CANCELED) {
             throw new DataIntegrityViolationException("Cancelled event cannot be published");
         }
 
-        if (newState != null && newState.equals(Event.State.CANCELED) && oldState.equals(Event.State.PUBLISHED)) {
+        if (newState != null && newState == Event.State.CANCELED && oldState == Event.State.PUBLISHED) {
             throw new DataIntegrityViolationException("Published event cannot be cancelled");
         }
 

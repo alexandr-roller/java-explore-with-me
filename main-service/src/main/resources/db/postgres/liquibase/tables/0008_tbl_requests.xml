@@ -19,6 +19,7 @@
             <column name="create_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
             <column name="rqst_rqst_id" type="integer"/>
         </createTable>
+        <addUniqueConstraint tableName="requests" columnNames="user_user_id, event_event_id"/>
         <addForeignKeyConstraint
                 baseTableName="requests"
                 baseColumnNames="user_user_id"
