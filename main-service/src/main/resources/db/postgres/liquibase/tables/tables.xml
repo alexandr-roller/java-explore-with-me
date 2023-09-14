@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <include file="db/postgres/liquibase/tables/0001_tbl_categories.xml"/>
+    <include file="db/postgres/liquibase/tables/0002_tbl_users.xml"/>
+    <include file="db/postgres/liquibase/tables/0003_tbl_event_states.xml"/>
+    <include file="db/postgres/liquibase/tables/0004_tbl_events.xml"/>
+    <include file="db/postgres/liquibase/tables/0005_tbl_compilations.xml"/>
+    <include file="db/postgres/liquibase/tables/0006_tbl_events_compilations.xml"/>
+    <include file="db/postgres/liquibase/tables/0007_tbl_request_statuses.xml"/>
+    <include file="db/postgres/liquibase/tables/0008_tbl_requests.xml"/>
+    <include file="db/postgres/liquibase/tables/0009_tbl_subscriptions.xml"/>
+</databaseChangeLog>
